@@ -15,7 +15,7 @@ drone.on('open', error => {
   }
   console.log('Successfully connected to Scaledrone');
 
-  const room = drone.subscribe('observable-room');
+  const room = drone.subscribe('room1');
   room.on('open', error => {
     if (error) {
       return console.error(error);
@@ -89,7 +89,7 @@ function sendMessage() {
   }
   DOM.input.value = '';
   drone.publish({
-    room: 'observable-room',
+    room: 'room1',
     message: value,
   });
 }
